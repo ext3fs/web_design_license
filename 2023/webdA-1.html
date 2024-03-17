@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 디자인 기능사 레이아웃 A-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #warp {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+        }
+        #header > .logo {
+            width: 20%;
+            background-color: #ccc;
+        }
+        #header > .nav {
+            width: 80%;
+            background-color: #6c1818;
+        }
+
+        #slider {
+            width: 100%;
+            height: 300px;
+            background-color: #cebebe;
+        }
+
+        #contents {
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+        #contents > .content1 {
+            width:40%;
+            background-color: #ccb0b0;
+        }
+        #contents > .content2 {
+            width: 30%;
+            background-color: #9f8989;
+        }
+        #contents > .content3 {
+            width: 30%;
+            background-color: #5d5050;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+        }
+        #footer > .logo {
+            width: 20%;
+            background-color: #d18f8f;
+        }
+        #footer > .copyright {
+            width: 60%;
+            background-color: #986969;
+        }
+        #footer > .sns {
+            width: 20%;
+            background-color: #402c2c;
+        }
+    </style>
+</head>
+<body>
+    <div id="warp">
+        <header id="header">
+            <h1 class="logo"></h1>
+            <nav class="nav"></nav>
+        </header>
+        <article id="slider">
+        </article>
+        <main id="contents">
+            <section class="content1"></section>
+            <section class="content2"></section>
+            <section class="content3"></section>
+        </main>
+        <footer id="footer">
+            <section class="logo"></section>
+            <section class="copyright"></section>
+            <section class="sns"></section>
+        </footer>
+    </div>
+</body>
+</html>
