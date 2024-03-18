@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 디자인 기능사 레이아웃 C-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 1000px;
+            height: 650px;
+            display: flex;
+        }
+
+        #aside {
+            width: 20%;
+            height: 100%;
+        }
+        #aside > .logo {
+            width: 100%;
+            height: 15%;
+            background-color: aliceblue;
+        }
+        #aside > .menu {
+            width: 100%;
+            height: 85%;
+            background-color: rgb(157, 204, 246);
+        }
+
+        #main {
+            width: 80%;
+            height: 100%;
+        }
+        #main > #slider {
+            width: 100%;
+            height: 350px;
+            background-color: antiquewhite;
+        }
+        #main > #contents {
+            width: 100%;
+            height: 200px;
+            display: flex;
+        }
+        #main > #contents > .content1 {
+            width: 34%;
+            height: 100%;
+            background-color: rgb(153, 144, 131);
+        }
+        #main > #contents > .content2 {
+            width: 33%;
+            height: 100%;
+            background-color: rgb(152, 128, 94);
+        }
+        #main > #contents > .content3 {
+            width: 33%;
+            height: 100%;
+            background-color: rgb(162, 103, 21);
+        }
+        #main > #footer {
+            width: 100%;
+            height: 100px;
+            display: flex;
+        }
+        #main > #footer > .copyright {
+            width: 80%;
+            height: 100%;
+            background-color: rgb(35, 33, 30);
+        }
+        #main > #footer > .footer_right {
+            width: 20%;
+            height: 100%;
+        }
+        #main > #footer > .footer_right > .sns {
+            width: 100%;
+            height: 50%;
+            background-color: rgb(52, 35, 11);
+        }
+        #main > #footer > .footer_right > .family_site {
+            width: 100%;
+            height: 50%;
+            background-color: rgb(136, 83, 9);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id="aside">
+            <h1 class="logo"></h1>
+            <nav class="menu"></nav>
+        </aside>
+        <main id="main">
+            <article id="slider"></article>
+            <section id="contents">
+                <article class="content1"></article>
+                <article class="content2"></article>
+                <article class="content3"></article>
+            </section>
+            <footer id="footer">
+                <address class="copyright"></address>
+                <div class="footer_right">
+                    <div class="sns"></div>
+                    <div class="family_site"></div>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
