@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 디자인 기능사 레이아웃 C-1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrap {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #aside {
+      width: 200px;
+      height: 850px;
+    }
+    #aside > .logo {
+      width: 100%;
+      height: 15%;
+      background-color: aliceblue;
+    }
+    #aside > .menu {
+      width: 100%;
+      height: 85%;
+      background-color: rgb(145, 197, 243);
+    }
+
+    #main {
+      width: calc(100% - 200px);
+    }
+    #main > .slider {
+      width: 100%;
+      height: 400px;
+      background-color: antiquewhite;
+      position: relative;
+    }
+    #main > .slider > .link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 300px;
+      background-color: rgb(41, 38, 35);
+    }
+    #main > .banner {
+      width: 100%;
+      height: 200px;
+      background-color: rgb(245, 189, 117);
+    }
+    #main > .contents {
+      width: 100%;
+      height: 250px;
+      background-color: rgb(248, 153, 28);
+    }
+
+    #footer {
+      width: 100%;
+      height: 100px;
+      display: flex;
+    }
+    #footer > .logo {
+      width: 200px;
+      height: 100%;
+      background-color: aqua;
+    }
+    #footer > .footer_wrap {
+      width: calc(100% - 200px);
+      height: 100%;
+      display: flex;
+    }
+    #footer > .footer_wrap > .copyright {
+      width: 80%;
+      height: 100%;
+      background-color: rgb(2, 157, 157);
+    }
+    #footer > .footer_wrap > .sns {
+      width: 20%;
+      height: 100%;
+      background-color: rgb(1, 44, 44);
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <aside id="aside">
+      <h1 class="logo"></h1>
+      <nav class="menu"></nav>
+    </aside>
+    <main id="main">
+      <article class="slider">
+        <div class="link"></div>
+      </article>
+      <article class="banner"></article>
+      <section class="contents"></section>
+    </main>
+    <footer id="footer">
+      <h1 class="logo"></h1>
+      <address class="footer_wrap">
+        <div class="copyright"></div>
+        <div class="sns"></div>
+      </address>
+    </footer>
+  </div>
+</body>
+</html>
