@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  <title>웹 디자인 기능사 레이아웃 D-2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrap {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    #aside {
+      width: 200px;
+      height: 650px;
+    }
+    #aside > .logo {
+      width: 100%;
+      height: 15%;
+      background-color: aliceblue;
+    }
+    #aside > .menu {
+      width: 100%;
+      height: 85%;
+      background-color: rgb(113, 182, 243);
+    }
+
+    #main {
+      width: calc(100% - 200px);
+    }
+    #main > .articles {
+      width: 100%;
+      height: 400px;
+      display: flex;
+    }
+    #main > .articles > .slider {
+      width: calc(100% - 230px);
+      height: 100%;
+      background-color: antiquewhite;
+    }
+    #main > .articles > .banner {
+      width: 230px;
+      height: 100%;
+      background-color: rgb(247, 180, 93);
+    }
+    #main > .contents {
+      width: 100%;
+      height: 250px;
+      display: flex;
+    }
+    #main > .contents > .content1 {
+      width: 50%;
+      height: 100%;
+      background-color: rgb(168, 147, 119);
+    }
+    #main > .contents > .content2 {
+      width: 50%;
+      height: 100%;
+      background-color: rgb(173, 117, 43);
+    }
+
+    #footer {
+      width: 100%;
+      height: 100px;
+      display: flex;
+    }
+    #footer > .logo {
+      width: 200px;
+      height: 100%;
+      background-color: aqua;
+    }
+    #footer > .copyright {
+      width: calc(100% - 200px - 230px);
+      height: 100%;
+      background-color: rgb(2, 147, 147);
+    }
+    #footer > .familysite {
+      width: 230px;
+      height: 100%;
+      background-color: rgb(1, 37, 37);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="wrap">
+    <aside id="aside">
+      <h1 class="logo"></h1>
+      <nav class="menu"></nav>
+    </aside>
+
+    <main id="main">
+      <article class="articles">
+        <div class="slider"></div>
+        <div class="banner"></div>
+      </article>
+      <section class="contents">
+        <div class="content1"></div>
+        <div class="content2"></div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <h1 class="logo"></h1>
+      <address class="copyright"></address>
+      <address class="familysite"></address>
+    </footer>
+  </div>
+
+</body>
+
+</html>
