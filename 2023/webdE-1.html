@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  <title>웹 디자인 기능사 레이아웃 E-1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #wrap {
+      width: 100%;
+    }
+
+    #main {
+      width: 100%;
+      height: calc(100vh - 120px);
+      display: flex;
+    }
+    #main > .header {
+      width: 200px;
+      height: 100%;
+    }
+    #main > .header > .logo {
+      width: 100%;
+      height: 15%;
+      background-color: antiquewhite;
+    }
+    #main > .header > .menu {
+      width: 100%;
+      height: 85%;
+      background-color: rgb(246, 202, 144);
+    }
+    #main > .contents {
+      width: 400px;
+      height: 100%;
+    }
+    #main > .contents > .banner {
+      width: 100%;
+      height: 20%;
+      background-color: rgb(167, 157, 143);
+    }
+    #main > .contents > .notice {
+      width: 100%;
+      height: 30%;
+      background-color: rgb(169, 146, 115);
+    }
+    #main > .contents > .gallery {
+      width: 100%;
+      height: 30%;
+      background-color: rgb(169, 129, 73);
+    }
+    #main > .contents > .link {
+      width: 100%;
+      height: 20%;
+      background-color: rgb(180, 116, 27);
+    }
+    #main > .slider {
+      width: calc(100% - 200px - 400px);
+      height: 100%;
+      background-color: rgb(50, 47, 43);
+    }
+
+    #footer {
+      width: 100%;
+      height: 120px;
+      display: flex;
+    }
+    #footer > .logo {
+      width: 200px;
+      height: 100%;
+      background-color: aquamarine;
+    }
+    #footer > .footer_right {
+      width: calc(100% - 200px);
+      height: 100%;
+    }
+    #footer > .footer_right > .menu {
+      width: 100%;
+      height: 50%;
+      background-color: rgb(36, 233, 168);
+    }
+    #footer > .footer_right > .copyright {
+      width: 100%;
+      height: 50%;
+      background-color: rgb(17, 106, 76);
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <main id="main">
+      <header class="header">
+        <h1 class="logo"></h1>
+        <nav class="menu"></nav>
+      </header>
+      <section class="contents">
+        <article class="banner"></article>
+        <article class="notice"></article>
+        <article class="gallery"></article>
+        <article class="link"></article>
+      </section>
+      <article class="slider"></article>
+    </main>
+    <footer id="footer">
+      <h1 class="logo"></h1>
+      <section class="footer_right">
+        <nav class="menu"></nav>
+        <address class="copyright"></address>
+      </section>
+    </footer>
+  </div>
+</body>
+</html>
