@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+  <title>웹 디자인 기능사 레이아웃 M-3</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'GmarketSans';
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* layout  */
+    #wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    #header {
+      width: 100%;
+      height: 100px;
+      display: flex;
+    }
+    #header > .logo {
+      width: 15%;
+      height: 100%;
+      background-color: antiquewhite;
+    }
+    #header > .menu {
+      width: 85%;
+      height: 100%;
+      background-color: rgb(237, 197, 146);
+    }
+
+    #slider {
+      width: 100%;
+      height: 300px;
+      background-color: aquamarine;
+    }
+
+    #contents {
+      width: 100%;
+      height: 200px;
+      display: flex;
+    }
+    #contents > .content1 {
+      width: 34%;
+      height: 100%;
+      background-color: aliceblue;
+    }
+    #contents > .content2 {
+      width: 33%;
+      height: 100%;
+      background-color: rgb(178, 214, 245);
+    }
+    #contents > .content3 {
+      width: 33%;
+      height: 100%;
+      background-color: rgb(76, 167, 246);
+    }
+    
+    #footer {
+      width: 100%;
+      height: 100px;
+      display: flex;
+    }
+    #footer > .logo {
+      width: 15%;
+      height: 100%;
+      background-color: burlywood;
+    }
+    #footer > .copyright {
+      width: 85%;
+      height: 100%;
+      background-color: rgb(214, 154, 76);
+    }
+    /* layout  */
+
+    /* header menu */
+    #header {
+      position: relative;
+    }
+    #header > .menu {
+      z-index: 100;
+    }
+    #header::after {
+      content: '';
+      width: 100%;
+      height: 0;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      z-index: 1;
+      background-color: rgb(88, 94, 96);
+      transition: all 600ms;
+    }
+    #header.on::after {
+      height: 154px;
+    }
+    #header > .menu > ul {
+      display: flex;
+      justify-content: right;
+      margin-top: 61px;
+    }
+    #header > .menu > ul > li > a {
+      display: inline-block;
+      padding: 10px 50px;
+      background-color: rgb(163, 172, 179);
+    }
+    #header > .menu > ul > li > a:hover {
+      background-color: rgb(88, 94, 96);
+    }
+    #header > .menu > ul > li > ul {
+      display: none;
+    }
+    #header > .menu > ul > li > ul > li > a {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+    }
+    #header > .menu > ul > li > ul > li > a:hover {
+      background-color: rgb(175, 189, 203);
+    }
+
+    /* for javascript */
+    #header > .menu > ul > li > ul {
+      display: block;
+      height: 0;
+      overflow: hidden;
+      transition: all 600ms;
+    }
+    /* menu */
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <h1 class="logo"></h1>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="#">menu1</a>
+            <ul>
+              <li><a href="#">submenu1</a></li>
+              <li><a href="#">submenu2</a></li>
+              <li><a href="#">submenu3</a></li>
+              <li><a href="#">submenu4</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu2</a>
+            <ul>
+              <li><a href="#">submenu1</a></li>
+              <li><a href="#">submenu2</a></li>
+              <li><a href="#">submenu3</a></li>
+              <li><a href="#">submenu4</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu3</a>
+            <ul>
+              <li><a href="#">submenu1</a></li>
+              <li><a href="#">submenu2</a></li>
+              <li><a href="#">submenu3</a></li>
+              <li><a href="#">submenu4</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu4</a>
+            <ul>
+              <li><a href="#">submenu1</a></li>
+              <li><a href="#">submenu2</a></li>
+              <li><a href="#">submenu3</a></li>
+              <li><a href="#">submenu4</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <article id="slider">
+    </article>
+    
+    <section id="contents">
+      <article class="content1"></article>
+      <article class="content2"></article>
+      <article class="content3"></article>
+    </section>
+
+    <footer id="footer">
+      <h1 class="logo"></h1>
+      <address class="copyright"></address>
+    </footer>
+  </div>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#header > .menu > ul > li").mouseover(function () {
+        $("#header > .menu > ul > li > ul").stop().fadeIn(500);
+        $("#header").addClass("on");
+      });
+      $("#header > .menu > ul > li").mouseout(function () {
+        $("#header > .menu > ul > li > ul").stop().fadeOut(500);
+        $("#header").removeClass("on");
+      });
+    });
+  </script> -->
+
+  <script>
+    window.onload = function () {
+      const menuUl = document.querySelector("#header > .menu > ul");
+      const subMenuUls = document.querySelectorAll("#header > .menu > ul > li > ul");
+      const bg = document.getElementById("header");
+
+      menuUl.addEventListener("mouseover", function () {
+        subMenuUls.forEach(function (ul) {
+          ul.style.height = "154px";
+        });
+        bg.classList.add("on");
+      });
+      
+      menuUl.addEventListener("mouseout", function () {
+        subMenuUls.forEach(function (ul) {
+          ul.style.height = "0px";
+        });
+        bg.classList.remove("on");
+      });
+    }
+  </script>
+</body>
+</html>
