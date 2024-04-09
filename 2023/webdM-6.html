@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+  <title>웹 디자인 기능사 레이아웃 M-6</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "GmarketSans";
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* layout */
+    #wrap {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #aside {
+      width: 200px;
+    }
+    #aside > .logo {
+      width: 100%;
+      height: 100px;
+      background-color: aliceblue;
+    }
+    #aside > .menu {
+      width: 100%;
+      height: 700px;
+      background-color: rgb(201, 223, 242);
+    }
+    #main {
+      width: calc(100% - 200px);
+    }
+    #main > .slider {
+      width: 100%;
+      height: 400px;
+      background-color: antiquewhite;
+    } #main > .link {
+      width: 100%;
+      height: 150px;
+      background-color: rgb(246, 217, 178);
+    }
+    #main > .contents {
+      width: 100%;
+      height: 250px;
+      background-color: rgb(244, 199, 140);
+    }
+    #footer {
+      width: 100%;
+      height: 100px;
+      background-color: aquamarine;
+    }
+    /* layout */
+
+    /* aside menu  */
+    #main {
+      position: relative;
+    }
+    #main::after {
+      display: inline-block;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      content: "";
+      width: 0;
+      height: 192px;
+      transition: width 300ms;
+      background-color: rgb(184, 206, 224);
+    }
+    #main.on::after {
+      width: 100%;
+    }
+
+    #aside > .menu > ul > li {
+      position: relative;
+    }
+    #aside > .menu > ul > li > a {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background-color: rgb(149, 167, 182);
+    }
+    #aside > .menu > ul > li > a:hover {
+      background-color: rgb(117, 131, 142);
+    }
+    #aside > .menu > ul > li > ul {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 200px;
+      z-index: 1;
+    }
+    #aside > .menu > ul > li > ul > li > a {
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 10px;
+      /* background-color: rgb(184, 206, 224); */
+    }
+    #aside > .menu > ul > li > ul > li > a:hover {
+      background-color: rgb(172, 192, 208);
+    }
+    /* aside menu  */
+  </style>
+  <script defer>
+    window.onload = function () {
+      const menu = document.querySelector("#aside > .menu > ul");
+      const subMenuList = document.querySelectorAll("#aside > .menu > ul > li > ul");
+      const main = document.getElementById("main");
+
+      menu.addEventListener("mouseover", function () {
+        main.classList.add("on");
+        subMenuList.forEach((subMenu) => {subMenu.style.display = "flex";});
+      });
+
+      menu.addEventListener("mouseout", function () {
+        main.classList.remove("on");
+        subMenuList.forEach((subMenu) => {subMenu.style.display = "none";});
+      });
+    };
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <aside id="aside">
+      <h1 class="logo"></h1>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="#">menu1</a>
+            <ul>
+              <li><a href="#">subMenu1</a></li>
+              <li><a href="#">subMenu2</a></li>
+              <li><a href="#">subMenu3</a></li>
+              <li><a href="#">subMenu4</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu2</a>
+            <ul>
+              <li><a href="#">subMenu1</a></li>
+              <li><a href="#">subMenu2</a></li>
+              <li><a href="#">subMenu3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu3</a>
+            <ul>
+              <li><a href="#">subMenu1</a></li>
+              <li><a href="#">subMenu2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu4</a>
+            <ul>
+              <li><a href="#">subMenu1</a></li>
+              <li><a href="#">subMenu2</a></li>
+              <li><a href="#">subMenu3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">menu5</a>
+            <ul>
+              <li><a href="#">subMenu1</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main id="main">
+      <article class="slider"></article>
+      <article class="link"></article>
+      <section class="contents"></section>
+    </main>
+    <footer id="footer"></footer>
+  </div>
+</body>
+</html>
