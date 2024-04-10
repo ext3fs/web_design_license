@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+  <title>웹 디자인 기능사 슬라이더 S-1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "GmarketSans";
+    }
+    
+    #wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    #header {
+      width: 100%;
+      height: 100px;
+      background-color: rgb(183, 215, 243);
+    }
+    #slider {
+      width: 100%;
+      height: 300px;
+      background-color: antiquewhite;
+    }
+    #main {
+      width: 100%;
+      height: 200px;
+      background-color: beige;
+    }
+    #footer {
+      width: 100%;
+      height: 100px;
+      background-color: aquamarine;
+    }
+    
+    /* slider */
+    #slider > .sliderWrap {
+      position: relative;
+    }
+    #slider > .sliderWrap > .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #slider > .sliderWrap > .slider > img {
+      vertical-align: top;
+    }
+    #slider > .sliderWrap > .slider > span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      color: white;
+      background-color: rgba(0,0,0,0.4);
+    }
+    /* slider */
+  </style>
+  <script defer>
+    window.onload = function () {
+      const sliderList = document.querySelectorAll("#slider > .sliderWrap > .slider");
+      let currIdx = 0;
+
+      //init
+      sliderList.forEach((slider) => { 
+        slider.style.opacity = "0";
+        slider.style.transition = "all 2s"; 
+      });
+      sliderList[currIdx].style.opacity = "1";
+      
+      //timer
+      setInterval(() => {
+        sliderList[currIdx].style.opacity = "0";
+        currIdx = (currIdx + 1) % sliderList.length;
+        sliderList[currIdx].style.opacity = "1";
+      }, 3000);
+    };
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header"></header>
+    <article id="slider">
+      <div class="sliderWrap">
+        <div class="slider s1">
+            <img src="../image/slider01.jpg" alt="이미지 설명">
+            <span>이미지1</span>
+        </div>
+        <div class="slider s2">
+            <img src="../image/slider02.jpg" alt="이미지 설명">
+            <span>이미지2</span>
+        </div>
+        <div class="slider s3">
+            <img src="../image/slider03.jpg" alt="이미지 설명">
+            <span>이미지3</span>
+        </div>
+    </div>
+    </article>
+    <main id="main"></main>
+    <footer id="footer"></footer>
+  </div>
+</body>
+</html>
