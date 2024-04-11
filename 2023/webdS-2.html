@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+  <title>웹 디자인 기능사 슬라이더 S-2</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "GmarketSans";
+    }
+
+    /* layout */
+    #wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    #header {
+      width: 100%;
+      height: 100px;
+      background-color: rgb(145, 200, 248);
+    }
+    #slider {
+      width: 100%;
+      height: 300px;
+      background-color: antiquewhite;
+    }
+    #main {
+      width: 100%;
+      height: 200px;
+      background-color: aquamarine;
+    }
+    #footer {
+      width: 100%;
+      height: 100px;
+      background-color: burlywood;
+    }
+    /* layout */
+
+    /* slider */
+    #slider {
+      overflow: hidden;
+    }
+    #slider > .sliderWrap {
+      display: flex;
+    }
+    #slider > .sliderWrap > .slide {
+      position: relative;
+    }
+    #slider > .sliderWrap > .slide > span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: aliceblue;
+      padding: 10px 20px;
+      background-color: rgba(0,0,0,0.5);
+    }
+    /* slider */
+  </style>
+  <script defer>
+    window.onload = function () {
+      let currIdx = 0;      
+      const sliderWrap = document.querySelector("#slider > .sliderWrap");
+      const lastIdx = sliderWrap.childElementCount;
+      
+      sliderWrap.appendChild(sliderWrap.firstElementChild.cloneNode(true));
+
+      setInterval(() => {
+        ++currIdx;
+        sliderWrap.style.transition = "all 0.6s"
+        sliderWrap.style.marginLeft = -currIdx * 100 + "%";
+  
+        if(currIdx === lastIdx) {
+          setTimeout(() => {
+            sliderWrap.style.transition = "0s"
+            sliderWrap.style.marginLeft = "0";
+          }, 700);
+          currIdx = 0;
+        }
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header"></header>
+    <article id="slider">
+      <div class="sliderWrap">
+        <div class="slide">
+          <img src="../image/slider01.jpg" alt="image1">
+          <span>이미지1</span>
+        </div>
+        <div class="slide">
+          <img src="../image/slider02.jpg" alt="image2">
+          <span>이미지2</span>
+        </div>
+        <div class="slide">
+          <img src="../image/slider03.jpg" alt="image3">
+          <span>이미지3</span>
+        </div>
+      </div>
+    </article>
+    <main id="main"></main>
+    <footer id="footer"></footer>
+  </div>
+</body>
+</html>
