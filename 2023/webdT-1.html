@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../image/favicon.ico" type="image/x-icon">
+  <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+  <title>웹 디자인 기능사 탭 메뉴 T-1</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "GmarketSans";
+    }
+    li {
+      list-style: none;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    /* layout */
+    #wrap {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    #header {
+      width: 100%;
+      height: 100px;
+      background-color: aliceblue;
+    }
+    #slider {
+      width: 100%;
+      height: 300px;
+      background-color: antiquewhite;
+    }
+    #contents {
+      display: flex;
+      width: 100%;
+      height: 200px;
+    }
+    #contents > .content1 {
+      width: 34%;
+      height: 100%;
+      background-color: rgb(165, 242, 216);
+    }
+    #contents > .content2 {
+      width: 33%;
+      height: 100%;
+      background-color: rgb(151, 198, 182);
+    }
+    #contents > .content3 {
+      width: 33%;
+      height: 100%;
+      background-color: rgb(89, 117, 108);
+    }
+    #footer {
+      width: 100%;
+      height: 100px;
+      background-color: beige;
+    }
+    /* layout */
+
+    /* tab */
+    #contents > .content1 > .tab-table {
+      padding: 20px;
+    }
+    #contents > .content1 > .tab-table > .tab-btn {
+      display: flex;
+    }
+    #contents > .content1 > .tab-table > .tab-btn > li > a {
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+      background-color: rgb(130, 129, 129);
+    }
+    #contents > .content1 > .tab-table > .tab-btn > li.active > a {
+      /* text-decoration-skip-ink : none; */
+      background-color: rgb(178, 176, 176);
+    }
+    #contents > .content1 > .tab-table > .tab-cont {
+      padding: 15px 10px 5px;
+      line-height: 1.6;
+      background-color: rgb(178, 176, 176);
+    }
+    #contents > .content1 > .tab-table > .tab-cont > div {
+      display: none;
+    }
+    #contents > .content1 > .tab-table > .tab-cont > div.active {
+      display: block;
+    }
+    /* tab */
+  </style>
+  <script defer>
+    window.onload = function () {
+      let currTabIdx = 0;
+      const tabBtns = document.querySelectorAll("#contents > .content1 > .tab-table > .tab-btn > li");
+      const tabConts = document.querySelectorAll("#contents > .content1 > .tab-table > .tab-cont > div");
+
+      tabBtns[currTabIdx].classList.add("active");
+      tabConts[currTabIdx].classList.add("active");
+
+      tabBtns.forEach((btn, idx) => {
+        btn.addEventListener("click", () => {
+          tabBtns[currTabIdx].classList.remove("active");
+          tabConts[currTabIdx].classList.remove("active");
+          currTabIdx = idx;
+          tabBtns[currTabIdx].classList.add("active");
+          tabConts[currTabIdx].classList.add("active");
+        });
+      });
+    }
+  </script>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header"></header>
+    <article id="slider"></article>
+    <main id="contents">
+      <section class="content1">
+        <div class="tab-table">
+          <ul class="tab-btn">
+            <li><a>tabBtn1</a></li>
+            <li><a>tabBtn2</a></li>
+          </ul>
+          <div class="tab-cont">
+            <div>tab1-content<br>tab1-content<br>tab1-content<br>tab1-content</div>
+            <div>tab2-content<br>tab2-content<br>tab2-content<br>tab2-content</div>
+          </div>
+        </div>
+      </section>
+      <section class="content2"></section>
+      <section class="content3"></section>
+    </main>
+    <footer id="footer"></footer>
+  </div>
+</body>
+</html>
